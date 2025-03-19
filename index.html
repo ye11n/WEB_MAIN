@@ -8,15 +8,40 @@
         <base href="http://127.0.0.1:5500">
         <meta charset="UTF-8">
         <title>STEAM 메인화면</title>
+        <style>
+            table{
+                font-size: 20pt;
+                color: white;
+            }
+        </style>
     </head>
     <body style="background-color: black;">
         <div style="display: flex; justify-content: center;">
             <img src="image/LOGO.svg" width="200" height="60">
-            <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white;">STORE COMMUNITY ABOUT SUPPORT</h3>
+            <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white;">
+                <a href="https://store.steampowered.com/" target="_blank">STORE</a> COMMUNITY ABOUT SUPPORT</h3>
         </div>
 
         <div style="display: flex; justify-content: center;">
         <img src="image/MAIN.jpg" width="1200" height="600">
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <table border="1">
+                    <caption>인기 캐릭터</caption>
+                    <tbody>
+                        <tr bgcolor="skyblue">
+                            <td>사이온</td>
+                            <td>아리</td>
+                            <td>가렌</td>
+                        </tr>
+                        <tr>
+                            <td>카직스</td>
+                            <td>루시안</td>
+                            <td>바이</td>
+                        </tr>
+                    </tbody>
+            </table>
         </div>
     </body>
 </html>
