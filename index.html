@@ -16,8 +16,11 @@
                 color: white;
             }
         </style>
+        <script type ="text/javascript" src="js/Basic_js_test.js"></script>
+        <script type ="text/javascript" defer src="js/Search.js"></script>
+        <script type ="text/javascript" defer src="js/pop_up.js"></script>
     </head>
-    <body style="background-color: black;">
+    <body style="background-color: black;" onload="pop_up();"></body>
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <img src="image/LOGO.svg" width="150" height="80">
             <!--<h1>STORE COMMUNITY ABOUT SUPPORT</h1>-->
@@ -31,23 +34,23 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://store.steampowered.com/">HOME</a>
+                        <a class="nav-link active" aria-current="page" href="https://store.steampowered.com/">홈</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://store.steampowered.com/">STORE</a>
+                        <a class="nav-link" href="https://store.steampowered.com/">스토어</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://steamcommunity.com/">COMMUNITY</a>
+                        <a class="nav-link" href="https://steamcommunity.com/">소셜</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://store.steampowered.com/about/?snr=1_14_4__global-header">ABOUT</a>
+                        <a class="nav-link" href="https://store.steampowered.com/about/?snr=1_14_4__global-header">정보</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://help.steampowered.com/en/">SUPPORT</a>
+                        <a class="nav-link" href="https://help.steampowered.com/en/">지원</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Language
+                          언어
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">English</a></li>
@@ -62,10 +65,12 @@
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                       </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="검색" aria-label="search">
-                      <button class="btn btn-outline-success" type="submit">검색</button>
-                    </form>
+
+                    <form class="d-flex" role="search" onsubmit="return googleSearch();">
+                      <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
+                      <button class="btn btn-outline-success" id="search_btn" type="submit">검색</button>
+                      </form>
+
                   </div>
                 </div>
               </nav>
