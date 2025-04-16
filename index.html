@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>STEAM 메인화면</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <style>
             table{
                 font-size: 20pt;
@@ -20,8 +21,10 @@
         <script type ="text/javascript" defer src="js/Search.js"></script>
         <script type ="text/javascript" defer src="js/pop_up.js"></script>
         <script type ="text/javascript" defer src="js/data_type.js"></script>
+        <link rel="stylesheet" href="../css/login.css">
     </head>
-    <body style="background-color: gray;" onload="pop_up();"></body>
+    <body style="background-color: gray;" onload="pop_up();">
+      <section class="vh-100 gradient-custom">
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <img src="image/LOGO.svg" width="150" height="80" onmouseover="over(this)" onmouseout="out(this)">
             <!--<h1>STORE COMMUNITY ABOUT SUPPORT</h1>-->
@@ -70,10 +73,11 @@
                     <form class="d-flex" role="search" onsubmit="return googleSearch();">
                       <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
                       <button class="btn btn-outline-success" id="search_btn" type="submit">검색</button>
-                      </form>
+                    </form>
 
                   </div>
                 </div>
+                <a href="login/login.html" class="btn btn-outline-success" id="login_btn">로그인</a>
               </nav>
         </div>
 
@@ -110,6 +114,6 @@
             <h3 style="font-size: 20pt; font-weight: bold; color: rgb(255, 255, 255); font-family: 굴림;">성결대학교 미디어소프트웨어학과</h3>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+      </section>
+      </body>
 </html>
