@@ -1,6 +1,11 @@
 function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     const emailInput = document.getElementById('typeEmailX');
     const idsave_check = document.getElementById('idSaveCheck');
+    const payload = {
+        id: emailValue,
+        exp: Math.floor(Date.now() / 1000) + 3600 // 1시간 (3600초)
+    };
+    const jwtToken = generateJWT(payload);
     let get_id = getCookie("id");
     if(get_id) {
         emailInput.value = get_id;
@@ -118,6 +123,7 @@ const check_input = () => {
 
         console.log('이메일:', emailValue);
         console.log('비밀번호:', passwordValue);
+        
         session_set(); // 세션 생성
         loginForm.submit();
 };
