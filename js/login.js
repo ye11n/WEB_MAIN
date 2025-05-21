@@ -14,7 +14,7 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     session_check(); // 세션 유무 검사
 }
 
-const check_xss = (input) => {
+    const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
     const DOMPurify = window.DOMPurify;
     // 입력 값을 DOMPurify로 sanitize
@@ -50,13 +50,19 @@ function getCookie(name) {
     return ;
 }
 
-const check_input = () => {
+    const check_input = () => {
     const loginForm = document.getElementById('login_form');
     const loginBtn = document.getElementById('login_btn');
     const emailInput = document.getElementById('typeEmailX');
     const passwordInput = document.getElementById('typePasswordX');
     // 전역 변수 추가, 맨 위 위치
     const idsave_check = document.getElementById('idSaveCheck');
+   const payload = {
+        id: emailValue,
+        exp: Math.floor(Date.now() / 1000) + 3600 // 1시간 (3600초)
+    };
+    const jwtToken = generateJWT(payload);
+    
     const c = '아이디, 패스워드를 체크합니다';
         alert(c);
 
@@ -123,8 +129,17 @@ const check_input = () => {
 
         console.log('이메일:', emailValue);
         console.log('비밀번호:', passwordValue);
-        
         session_set(); // 세션 생성
+        localStorage.setItem('jwt_token', jwtToken);
         loginForm.submit();
 };
+
+function init_logined(){
+    if(sessionStorage){
+        decrypt_text(); // 복호화 함수
+    }
+    else{
+        alert("세션 스토리지 지원 x");
+    }
+}
     document.getElementById("login_btn").addEventListener('click', check_input);
